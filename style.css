@@ -1,0 +1,15 @@
+@font-face {font-family: 'Alte Haas Grotesk Regular'; src: url('alte_haas_grotesk_regular.ttf') format('truetype'); font-weight: normal; font-style: normal}
+@import 	url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+body {
+	background: #111319; 
+	color: #eee;
+	font-size: 21px;
+    font-family: "Alte Haas Grotesk Regular",sans-serif;
+    margin: .5rem auto;
+    padding: 5rem;
+    max-width: 700px;
+}
+hr 				{margin:2rem 0; border: 1px solid #eee;}
+p 				{font-family: 'Work Sans',sans-serif;}
+main a          {color:#55f2ce; text-decoration: underline;}
+main a:hover    {cursor:pointer; text-decoration: none;}
