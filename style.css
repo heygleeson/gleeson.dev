@@ -1,13 +1,13 @@
 @font-face {font-family: 'Alte Haas Grotesk Regular'; src: url('alte_haas_grotesk_regular.ttf') format('truetype'); font-weight: normal; font-style: normal}
-@import 	url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import   url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 body {
-	background: #111319; 
-	color: #eee;
-	font-size: 1.5rem;
-    font-family: "Alte Haas Grotesk Regular",sans-serif;
-    margin: .5rem auto;
-    padding: 5rem 2rem;
-    max-width: 700px;
+  background: #111319; 
+  color: #eee;
+  font-size: 1.5rem;
+  font-family: "Alte Haas Grotesk Regular",sans-serif;
+  margin: .5rem auto;
+  padding: 5rem 2rem;
+  max-width: 700px;
 }
 
 #showcase {
@@ -17,9 +17,9 @@ body {
   grid-row-gap: 8px;
 }
 
-img             {border-radius: 8px; width: 100%;}
-hr 				{margin:2rem 0; border: 1px solid #eee; background-color: #eee;}
-p 				{font-family: 'Work Sans',sans-serif;}
+#art            {border-radius: 8px; width: 100%;}
+hr              {margin:2rem 0; border: 1px solid #eee; background-color: #eee;}
+p               {font-family: 'Work Sans',sans-serif;}
 main a          {color:#56F1CE; text-decoration: underline;} /*#56F1Ce*/
 main a:hover    {cursor:pointer; text-decoration: none;}
 .yellow         {color: #F9B454;}
