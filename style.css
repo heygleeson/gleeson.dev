@@ -9,7 +9,18 @@ body {
     padding: 5rem 2rem;
     max-width: 700px;
 }
-hr 				{margin:2rem 0; border: 1px solid #eee;}
+
+#showcase {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+}
+
+img             {border-radius: 8px; width: 100%;}
+hr 				{margin:2rem 0; border: 1px solid #eee; background-color: #eee;}
 p 				{font-family: 'Work Sans',sans-serif;}
-main a          {color:#55f2ce; text-decoration: underline;}
+main a          {color:#56F1CE; text-decoration: underline;} /*#56F1Ce*/
 main a:hover    {cursor:pointer; text-decoration: none;}
+.yellow         {color: #F9B454;}
+i               {color:  #89A;}
