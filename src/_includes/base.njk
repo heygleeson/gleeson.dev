@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ title }} | {{site.title}}</title>
+	<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+	<!-- SEO/SOCIAL -->
+	<!-- SCRIPTS -->
+	{% block styles %}
+		<link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+    	<link rel="stylesheet" href="{{ '/css/prism-base16-gruvbox.dark.css' | url }}">
+    	<link rel="stylesheet" href="{{ '/css/prism-diff.css' | url }}">
+	{% endblock %}
+	{% block scripts %}
+	{% endblock %}
+</head>
+<body>
+	<header>
+
+		<a href="{{ '/' | url }}">
+			<div class="header-title row">
+			<img src="/img/authors/gleeson.jpg"></img>
+			<span>{{ site.title }}</span>
+			</div>
+		</a>
+		<nav>
+			{% for entry in collections.all | eleventyNavigation %}
+				<div class="nav-item">
+					<a href="{{ entry.url | url }}">{{ entry.title | uppercase }}</a>
+				</div>
+			{% endfor %}
+		</nav>
+	</header>
+	<main class="fade-in">
+		{{ content | safe }}
+	</main>
+	<footer>
+		<div>
+		<p>{{site.description}}</p>
+		<p>
+			<a href="/contact/">📧</a>
+			<span class="nav-sep">/</span>
+			<a href="https://twitter.com/heygleeson" target="_blank">🐦</a>
+			<span class="nav-sep">/</span>
+			<a href="https://github.com/heygleeson" target="_blank">🐙</a>
+			<span class="nav-sep">/</span>
+			<a href="https://firepit.zone" target="_blank">🌐</a>
+		</p>
+		</div>
+		<img src="/img/authors/gleeson.jpg"></img>
+	</footer>
+</body>
+</html>

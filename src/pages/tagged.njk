@@ -1,0 +1,19 @@
+---
+layout: base.njk
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - allBlogTags 
+    - allTags
+    - blog
+    - all
+eleventyComputed:
+  title: Tagged "{{ tag }}"
+permalink: /tags/{{ tag }}/
+---
+<h2>// {{ title }}</h2>
+<hr>
+{% set list = collections[ tag ] %}
+{% include 'postlist.njk' %}
