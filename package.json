@@ -4,11 +4,7 @@
   "description": "Andrew Gleeson's website, made with Eleventy.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npx @11ty/eleventy --watch",
-    "serve": "npx @11ty/eleventy --serve",
-    "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy",
-    "debug": "DEBUG=* npx @11ty/eleventy"
+    "build": "eleventy"
   },
   "author": "Andrew Gleeson",
   "license": "ISC",
