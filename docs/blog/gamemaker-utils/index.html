@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GameMaker Scripts | gleeson.dev</title>
+	<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+	<!-- SEO/SOCIAL -->
+	<!-- SCRIPTS -->
+	
+		<link rel="stylesheet" href="/css/style.css">
+    	<link rel="stylesheet" href="/css/prism-base16-gruvbox.dark.css">
+    	<link rel="stylesheet" href="/css/prism-diff.css">
+	
+	
+	
+</head>
+<body>
+	<header>
+
+		<a href="/">
+			<div class="header-title row">
+			<img src="/img/authors/gleeson.jpg"></img>
+			<span>gleeson.dev</span>
+			</div>
+		</a>
+		<nav>
+			
+				<div class="nav-item">
+					<a href="/about/">ABOUT</a>
+				</div>
+			
+				<div class="nav-item">
+					<a href="/blog/">BLOG</a>
+				</div>
+			
+				<div class="nav-item">
+					<a href="/contact/">CONTACT</a>
+				</div>
+			
+		</nav>
+	</header>
+	<main class="fade-in">
+		<div id="crumbs">
+
+/ <a href="/blog">BLOG</a> /
+</div>
+
+<h1>GameMaker Scripts</h1>
+<div class="intro"></div>
+<hr>
+<div class="postmeta">
+	<div class="row">
+		<div class="authorImageSmall">
+			<img src="/img/authors/gleeson.jpg" alt="Andrew Gleeson profile image">
+		</div>
+		<author>gleeson </author>
+	</div>
+	
+	<div class="column">
+		<date>Published 29 Sep 2022</date>
+		
+	</div>
+</div>
+
+<hr>
+
+<article>
+	<p>Here is my collection of useful functions I use in multiple GameMaker projects.</p>
+<h3 id="function()" tabindex="-1">function() <a class="direct-link" href="#function()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml"><br></code></pre>
+<hr>
+<details>
+	<summary><h2>General Functions</h2></summary>
+<p>General functions.</p>
+<h3 id="Macros" tabindex="-1">Macros <a class="direct-link" href="#Macros" aria-hidden="true">#</a></h3>
+<pre class="language-gml"><code class="language-gml">#macro key_press		keyboard_check_pressed<br>#macro key_held			keyboard_check<br>#macro key_release		keyboard_check_released<br><br>#macro mouse_press		mouse_check_button_pressed<br>#macro mouse_held		mouse_check_button<br>#macro mouse_release	mouse_check_button_released<br><br>#macro DATETIME_NOW		<span class="token function">date_datetime_string</span><span class="token punctuation">(</span><span class="token function">date_current_datetime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br><br>#macro struct_get		variable_struct_get<br>#macro struct_names		variable_struct_get_names<br>#macro struct_length	variable_struct_names_count<br>#macro struct_set		variable_struct_set<br>#macro struct_exists	variable_struct_exists<br><br>#macro console			show_debug_message<br></code></pre>
+<h3 id="single_object()" tabindex="-1">single_object() <a class="direct-link" href="#single_object()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml">function <span class="token function">single_object</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">instance_number</span><span class="token punctuation">(</span><span class="token constant">object_index</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token function">instance_destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">if</span> <span class="token punctuation">(</span>drawDebug<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token comment">// Canvas</span><br>	<span class="token function">draw_text</span><span class="token punctuation">(</span>canvasBbox<span class="token punctuation">.</span>x1<span class="token punctuation">,</span> canvasBbox<span class="token punctuation">.</span>y1<span class="token punctuation">,</span><span class="token string">"Canvas"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token function">draw_rect</span><span class="token punctuation">(</span>canvasBbox<span class="token punctuation">.</span>x1<span class="token punctuation">,</span> canvasBbox<span class="token punctuation">.</span>y1<span class="token punctuation">,</span> canvasBbox<span class="token punctuation">.</span>x2<span class="token punctuation">,</span> canvasBbox<span class="token punctuation">.</span>y2<span class="token punctuation">,</span> <span class="token constant">c_fuchsia</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token function">draw_rect</span><span class="token punctuation">(</span>canvasBbox<span class="token punctuation">.</span>x1<span class="token punctuation">,</span> canvasBbox<span class="token punctuation">.</span>y1<span class="token punctuation">,</span> canvasBbox<span class="token punctuation">.</span>x2<span class="token punctuation">,</span> canvasBbox<span class="token punctuation">.</span>y2<span class="token punctuation">,</span> <span class="token constant">c_fuchsia</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br></code></pre>
+<h3 id="create()" tabindex="-1">create() <a class="direct-link" href="#create()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml">function <span class="token function">create</span><span class="token punctuation">(</span>instance<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">return</span> <span class="token function">instance_create_depth</span><span class="token punctuation">(</span><span class="token variable">x</span><span class="token punctuation">,</span><span class="token variable">y</span><span class="token punctuation">,</span>depth<span class="token punctuation">,</span>instance<span class="token punctuation">)</span><span class="token punctuation">;</span>	<br><span class="token punctuation">}</span></code></pre>
+<h3 id="instance_get_name()" tabindex="-1">instance_get_name() <a class="direct-link" href="#instance_get_name()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml">function <span class="token function">instance_get_name</span><span class="token punctuation">(</span>_id<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">return</span> <span class="token function">object_get_name</span><span class="token punctuation">(</span>_id<span class="token punctuation">.</span><span class="token constant">object_index</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"("</span> <span class="token operator">+</span> <span class="token function">string</span><span class="token punctuation">(</span>_id<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">")"</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<h3 id="forof()" tabindex="-1">forof() <a class="direct-link" href="#forof()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml"><span class="token comment">// NOTE: Callback MUST be a function receiving three arguments: function(struct,k,v) {}</span><br>function <span class="token function">forof</span><span class="token punctuation">(</span>_struct<span class="token punctuation">,</span> _callback<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">var</span> k<span class="token punctuation">,</span>v<span class="token punctuation">,</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>	<span class="token keyword">var</span> _prop	<span class="token operator">=</span> <span class="token function">struct_names</span><span class="token punctuation">(</span>_struct<span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token keyword">var</span> _len	<span class="token operator">=</span> <span class="token function">struct_length</span><span class="token punctuation">(</span>_struct<span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token keyword">repeat</span><span class="token punctuation">(</span>_len<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>		k <span class="token operator">=</span> _prop<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>		v <span class="token operator">=</span> _struct<span class="token punctuation">[</span>$ k<span class="token punctuation">]</span><span class="token punctuation">;</span><br>		<span class="token function">_callback</span><span class="token punctuation">(</span>_struct<span class="token punctuation">,</span>k<span class="token punctuation">,</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h4 id="Usage" tabindex="-1">Usage <a class="direct-link" href="#Usage" aria-hidden="true">#</a></h4>
+<pre class="language-gml"><code class="language-gml"></code></pre>
+<h3 id="string_concat()" tabindex="-1">string_concat() <a class="direct-link" href="#string_concat()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml">function <span class="token function">string_concat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">var</span> output <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token variable">argument_count</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>		output <span class="token operator">+=</span> <span class="token function">string</span><span class="token punctuation">(</span><span class="token variable">argument</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br>	<span class="token keyword">return</span> output<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<h4 id="Usage-1" tabindex="-1">Usage <a class="direct-link" href="#Usage-1" aria-hidden="true">#</a></h4>
+<pre class="language-gml"><code class="language-gml"></code></pre>
+<hr>
+</details>
+<h2 id="Math-Functions" tabindex="-1">Math Functions <a class="direct-link" href="#Math-Functions" aria-hidden="true">#</a></h2>
+<p>Math functions.</p>
+<h3 id="approach()" tabindex="-1">approach() <a class="direct-link" href="#approach()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml">function <span class="token function">approach</span><span class="token punctuation">(</span>_val<span class="token punctuation">,</span>_target<span class="token punctuation">,</span>_inc<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">if</span> _val <span class="token operator">&lt;</span> _target	<span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token function">min</span><span class="token punctuation">(</span>_val<span class="token operator">+</span>_inc<span class="token punctuation">,</span>_target<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><br>	<span class="token keyword">else</span>				<span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token function">max</span><span class="token punctuation">(</span>_val<span class="token operator">-</span>_inc<span class="token punctuation">,</span>_target<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h3 id="wrap()" tabindex="-1">wrap() <a class="direct-link" href="#wrap()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml">function <span class="token function">wrap</span><span class="token punctuation">(</span>_val<span class="token punctuation">,</span>_min<span class="token punctuation">,</span>_max<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">var</span> _mod <span class="token operator">=</span> <span class="token punctuation">(</span>_val<span class="token operator">-</span>_min<span class="token punctuation">)</span> mod <span class="token punctuation">(</span>_max<span class="token operator">-</span>_min<span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token keyword">if</span> <span class="token punctuation">(</span> _mod <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token punctuation">(</span>_mod <span class="token operator">+</span> _max<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span> <br>	<span class="token keyword">else</span>			<span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token punctuation">(</span>_mod <span class="token operator">+</span> _min<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><br><span class="token punctuation">}</span><br></code></pre>
+<h3 id="invlerp()" tabindex="-1">invlerp() <a class="direct-link" href="#invlerp()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml">function <span class="token function">invlerp</span><span class="token punctuation">(</span>_min<span class="token punctuation">,</span>_max<span class="token punctuation">,</span>_val<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">return</span> <span class="token punctuation">(</span>_val<span class="token operator">-</span>_min<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>_max<span class="token operator">-</span>_min<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br></code></pre>
+<h3 id="chance()" tabindex="-1">chance() <a class="direct-link" href="#chance()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml">function <span class="token function">chance</span><span class="token punctuation">(</span>_percent<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token function">irandom</span><span class="token punctuation">(</span><span class="token number">99</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> _percent<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<h3 id="inside()" tabindex="-1">inside() <a class="direct-link" href="#inside()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml">function <span class="token function">inside</span><span class="token punctuation">(</span>_val<span class="token punctuation">,</span>_min<span class="token punctuation">,</span>_max<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">return</span> <span class="token punctuation">(</span>_val <span class="token operator">>=</span> _min <span class="token operator">and</span> _val <span class="token operator">&lt;=</span> _max<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<h3 id="Spring()" tabindex="-1"><strong>Spring()</strong> <a class="direct-link" href="#Spring()" aria-hidden="true">#</a></h3>
+<p><strong>Spring</strong> is a 'class' that lets you make springy values!</p>
+<blockquote>
+<p><strong>NOTE</strong> Spring() makes use of the <a href="#Delta">Delta</a> functions.</p>
+</blockquote>
+<pre class="language-gml"><code class="language-gml">function <span class="token function">Spring</span><span class="token punctuation">(</span>_val <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> _target <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> _spd <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> _damp <span class="token operator">=</span> <span class="token number">0.6</span><span class="token punctuation">,</span> _factor <span class="token operator">=</span> <span class="token number">0.1</span><span class="token punctuation">)</span> constructor <span class="token punctuation">{</span><br>	<br>	value	<span class="token operator">=</span> _val<span class="token punctuation">;</span><br>	target	<span class="token operator">=</span> _target<span class="token punctuation">;</span><br>	spd		<span class="token operator">=</span> _spd<span class="token punctuation">;</span><br>	damp	<span class="token operator">=</span> _damp<span class="token punctuation">;</span><br>	factor	<span class="token operator">=</span> _factor<span class="token punctuation">;</span><br>	<br>	static update <span class="token operator">=</span> <span class="token function">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>		spd		<span class="token operator">+=</span> <span class="token function">game_speed</span><span class="token punctuation">(</span><span class="token punctuation">(</span>target <span class="token operator">-</span> value<span class="token punctuation">)</span> <span class="token operator">*</span> factor<span class="token punctuation">)</span><span class="token punctuation">;</span><br>		value	<span class="token operator">+=</span> <span class="token function">game_speed</span><span class="token punctuation">(</span>spd<span class="token punctuation">)</span><span class="token punctuation">;</span><br>		spd		<span class="token operator">*=</span> <span class="token function">game_multiply</span><span class="token punctuation">(</span>damp<span class="token punctuation">)</span><span class="token punctuation">;</span><br>		<span class="token keyword">return</span> value<span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br>	<br>	static force <span class="token operator">=</span> <span class="token function">function</span><span class="token punctuation">(</span>_x<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>		value	<span class="token operator">=</span> _x<span class="token punctuation">;</span><br>		target	<span class="token operator">=</span> _x<span class="token punctuation">;</span><br>		spd		<span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<hr>
+<h2 id="File-Functions" tabindex="-1">File Functions <a class="direct-link" href="#File-Functions" aria-hidden="true">#</a></h2>
+<p>File functions</p>
+<hr>
+<h2 id="Delta-Functions" tabindex="-1">Delta Functions <a class="direct-link" href="#Delta-Functions" aria-hidden="true">#</a></h2>
+<p>Delta Functions</p>
+<pre class="language-gml"><code class="language-gml"><span class="token comment">/// Utilities : DELTATIME</span><br><span class="token comment">/// (Description)</span><br><br><span class="token constant">global</span><span class="token punctuation">.</span>GAMEFPS		<span class="token operator">=</span> <span class="token variable">room_speed</span><span class="token punctuation">;</span><br><span class="token constant">global</span><span class="token punctuation">.</span>GAMESPEED	<span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><br><br><span class="token comment">// ---------------------------------------------------- //</span><br><br>function <span class="token function">game_speed</span><span class="token punctuation">(</span>_val<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">return</span> _val <span class="token operator">*</span> <span class="token constant">global</span><span class="token punctuation">.</span>GAMESPEED<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br>function <span class="token function">game_multiply</span><span class="token punctuation">(</span>_val<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">return</span> <span class="token function">power</span><span class="token punctuation">(</span>_val<span class="token punctuation">,</span><span class="token constant">global</span><span class="token punctuation">.</span>GAMESPEED<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br>function <span class="token function">game_set_fps</span><span class="token punctuation">(</span>_fps<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token constant">global</span><span class="token punctuation">.</span>GAMEFPS		<span class="token operator">=</span> _fps<span class="token punctuation">;</span><br>	<span class="token constant">global</span><span class="token punctuation">.</span>GAMESPEED	<span class="token operator">=</span> <span class="token number">60</span> <span class="token operator">/</span> _fps<span class="token punctuation">;</span><br>	<span class="token function">game_set_speed</span><span class="token punctuation">(</span>_fps<span class="token punctuation">,</span><span class="token constant">gamespeed_fps</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br></code></pre>
+<h3 id="game_speed()" tabindex="-1">game_speed() <a class="direct-link" href="#game_speed()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml">function <span class="token function">game_speed</span><span class="token punctuation">(</span>_val<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">return</span> _val <span class="token operator">*</span> <span class="token constant">global</span><span class="token punctuation">.</span>GAMESPEED<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br></code></pre>
+<h3 id="game_multiply()" tabindex="-1">game_multiply() <a class="direct-link" href="#game_multiply()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml">function <span class="token function">game_multiply</span><span class="token punctuation">(</span>_val<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">return</span> <span class="token function">power</span><span class="token punctuation">(</span>_val<span class="token punctuation">,</span><span class="token constant">global</span><span class="token punctuation">.</span>GAMESPEED<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br></code></pre>
+<h3 id="game_set_fps()" tabindex="-1">game_set_fps() <a class="direct-link" href="#game_set_fps()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml">function <span class="token function">game_set_fps</span><span class="token punctuation">(</span>_fps<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token constant">global</span><span class="token punctuation">.</span>GAMEFPS		<span class="token operator">=</span> _fps<span class="token punctuation">;</span><br>	<span class="token constant">global</span><span class="token punctuation">.</span>GAMESPEED	<span class="token operator">=</span> <span class="token number">60</span> <span class="token operator">/</span> _fps<span class="token punctuation">;</span><br>	<span class="token function">game_set_speed</span><span class="token punctuation">(</span>_fps<span class="token punctuation">,</span><span class="token constant">gamespeed_fps</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br></code></pre>
+<hr>
+<h2 id="Drawing-Functions" tabindex="-1">Drawing Functions <a class="direct-link" href="#Drawing-Functions" aria-hidden="true">#</a></h2>
+<blockquote>
+<p><strong>NOTE</strong> The following functions depend on having a Sprite asset, <code>sPixel</code>, which is a 1x1 white pixel asset. Make this yourself.</p>
+</blockquote>
+<h3 id="draw_rect()" tabindex="-1">draw_rect() <a class="direct-link" href="#draw_rect()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml">function <span class="token function">draw_rect</span><span class="token punctuation">(</span>_l<span class="token punctuation">,</span>_t<span class="token punctuation">,</span>_r<span class="token punctuation">,</span>_b<span class="token punctuation">,</span>_col<span class="token punctuation">,</span>_alpha<span class="token punctuation">,</span>_outline<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">var</span>	_w <span class="token operator">=</span> <span class="token function">ceil</span><span class="token punctuation">(</span>_r<span class="token operator">-</span>_l<span class="token punctuation">)</span><span class="token punctuation">,</span> _h <span class="token operator">=</span> <span class="token function">ceil</span><span class="token punctuation">(</span>_b<span class="token operator">-</span>_t<span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token keyword">if</span> <span class="token punctuation">(</span>_outline<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>		<span class="token function">draw_sprite_ext</span><span class="token punctuation">(</span>sPixel<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>_l<span class="token punctuation">,</span>_t<span class="token punctuation">,</span>_w<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>_col<span class="token punctuation">,</span>_alpha<span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">// Top</span><br>		<span class="token function">draw_sprite_ext</span><span class="token punctuation">(</span>sPixel<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>_l<span class="token punctuation">,</span>_t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>_h<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>_col<span class="token punctuation">,</span>_alpha<span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">// Left</span><br>		<span class="token function">draw_sprite_ext</span><span class="token punctuation">(</span>sPixel<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>_r<span class="token punctuation">,</span>_t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>_h<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>_col<span class="token punctuation">,</span>_alpha<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// Right</span><br>		<span class="token function">draw_sprite_ext</span><span class="token punctuation">(</span>sPixel<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>_l<span class="token punctuation">,</span>_b<span class="token punctuation">,</span>_w<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>_col<span class="token punctuation">,</span>_alpha<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// Bottom</span><br>	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span><br>		<span class="token function">draw_sprite_ext</span><span class="token punctuation">(</span>sPixel<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>_l<span class="token punctuation">,</span>_t<span class="token punctuation">,</span>_w<span class="token punctuation">,</span>_h<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>_col<span class="token punctuation">,</span>_alpha<span class="token punctuation">)</span><span class="token punctuation">;</span>	<br>	<span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h3 id="draw_crosshair()" tabindex="-1">draw_crosshair() <a class="direct-link" href="#draw_crosshair()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml">function <span class="token function">draw_crosshair</span><span class="token punctuation">(</span>_x<span class="token punctuation">,</span>_y<span class="token punctuation">,</span>_w<span class="token punctuation">,</span>_h<span class="token punctuation">,</span>_col<span class="token punctuation">,</span>_alpha<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token function">draw_sprite_ext</span><span class="token punctuation">(</span>sPixel<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>_x<span class="token operator">-</span>_w<span class="token punctuation">,</span>_y<span class="token punctuation">,</span>_w<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>_col<span class="token punctuation">,</span>_alpha<span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token function">draw_sprite_ext</span><span class="token punctuation">(</span>sPixel<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>_x<span class="token punctuation">,</span>_y<span class="token operator">-</span>_h<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>_h<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>_col<span class="token punctuation">,</span>_alpha<span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<br>	<span class="token function">draw_text</span><span class="token punctuation">(</span>_x<span class="token punctuation">,</span> _y<span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>_x<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> <span class="token function">string</span><span class="token punctuation">(</span>_y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<h3 id="draw_collision_box()" tabindex="-1">draw_collision_box() <a class="direct-link" href="#draw_collision_box()" aria-hidden="true">#</a></h3>
+<p>description.</p>
+<pre class="language-gml"><code class="language-gml">function <span class="token function">draw_collision_box</span><span class="token punctuation">(</span>_col <span class="token operator">=</span> <span class="token constant">c_red</span><span class="token punctuation">,</span> _alpha <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token function">draw_rect</span><span class="token punctuation">(</span><span class="token variable">bbox_left</span><span class="token punctuation">,</span><span class="token variable">bbox_top</span><span class="token punctuation">,</span><span class="token variable">bbox_right</span><span class="token punctuation">,</span><span class="token variable">bbox_bottom</span><span class="token punctuation">,</span>_col<span class="token punctuation">,</span> _alpha<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<hr>
+<p>That's it!</p>
+
+</article>
+<hr>
+<div class="taglist">
+	<strong>Tags</strong>
+	
+		
+		<span class="tag"><a href="../../tags/code/">code</a></span>
+	
+		
+		<span class="tag"><a href="../../tags/gamemaker/">gamemaker</a></span>
+	
+</div>
+	</main>
+	<footer>
+		<div>
+		<p>description about me and my blog</p>
+		<p>
+			<a href="/contact/">📧</a>
+			<span class="nav-sep">/</span>
+			<a href="https://twitter.com/heygleeson" target="_blank">🐦</a>
+			<span class="nav-sep">/</span>
+			<a href="https://github.com/heygleeson" target="_blank">🐙</a>
+			<span class="nav-sep">/</span>
+			<a href="https://firepit.zone" target="_blank">🌐</a>
+		</p>
+		</div>
+		<img src="/img/authors/gleeson.jpg"></img>
+	</footer>
+</body>
+</html>
