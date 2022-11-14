@@ -14,7 +14,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: '10.x'
+          node-version: '16.x'
 
       - run: npm ci
 
@@ -24,4 +24,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: $
-          publish_dir: ./dist
+          publish_dir: ./public
