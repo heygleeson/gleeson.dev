@@ -182,7 +182,7 @@ module.exports = (config) => {
 			data : '_data',
 			includes: '_includes',
 			layouts: '_includes',
-			output: 'docs'
+			output: '_site'
 		},
 		// Template Engines
 		templateFormats: ['md','njk','html'],
