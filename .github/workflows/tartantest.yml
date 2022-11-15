@@ -1,4 +1,4 @@
-name: Eleventy Build
+name: Eleventy Build TartanLlama
 
 on: [push]
 
@@ -9,9 +9,11 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@master
-      - name: Build
+      - name: Build via TartanLlama
         uses: TartanLlama/actions-eleventy@master
-      - name: Deploy
+        with:
+          install_depencies: true
+      - name: Deploy to GH-Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: _site 
