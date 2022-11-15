@@ -6,6 +6,7 @@
 	<title>Tagged &quot;featured&quot; | gleeson.dev</title>
 	<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 	<!-- SEO/SOCIAL -->
+
 	<!-- SCRIPTS -->
 	
 		<link rel="stylesheet" href="/css/style.css">
@@ -17,13 +18,27 @@
 </head>
 <body>
 	<header>
+		
+			<div class="header-row">
 
-		<a href="/">
-			<div class="header-title row">
-			<img src="/img/authors/gleeson.jpg"></img>
-			<span>gleeson.dev</span>
+				<a href="/" style="display:flex; flex-flow: row; align-items:center; gap:.5em;">
+				<img src="/img/authors/gleeson.jpg"></img>
+				<div class="header-title">
+					<span>gleeson.dev</span>
+					<span class="tagline">it&#39;s a me, andy!</span>
+				</div>
+				</a>
+
+				<a href="/now/" style="align-content: end; flex-grow:1">
+				<div class="header-info column">
+					
+					<span class="headerInfo _title"><date class="headerInfo _date">(16 Nov 2022)</date> NOW</span>
+					<span class="headerInfo _text">Wow! This is what I&#39;m up to!</span>
+				</div>
+				</a>
+
 			</div>
-		</a>
+		
 		<nav>
 			
 				<div class="nav-item">
@@ -38,13 +53,19 @@
 					<a href="/contact/">CONTACT</a>
 				</div>
 			
+				<div class="nav-item">
+					<a href="/now/">NOW</a>
+				</div>
+			
 		</nav>
 	</header>
 	<main class="fade-in">
-		<h2>// Tagged &quot;featured&quot;</h2>
+		<div id="crumbs">
+<a href="/">•</a> / <a href="/tags">Tags</a> / Tagged &quot;featured&quot;
+</div>
+
+<h2>Tagged &quot;featured&quot;</h2>
 <hr>
-
-
 
 
 
@@ -52,56 +73,45 @@
 
 <a href="/blog/second-post/" class="block nopadding">
 	<article class="postlist-item  featured ">
-
 		
-			<div class="postlist-image" style="background-image: url('/img/station.png">
-				
-			</div>
-		
-		
+		<div class="postlist-image" style="background-image: url('/img/station.png"></div>
 		
 		<div class="postlist-text">
 			<div class="postlist-title">Featured Post!</div>
 			<p>Very exciting!</p>
 			<date>14 Nov 2022</date>
-		</article>
+		</div>
 	</article>
 </a>
-	
 
 <a href="/blog/first-entry/" class="block nopadding">
 	<article class="postlist-item  featured ">
-
 		
-			<div class="postlist-image" style="background-image: url('/img/city.gif">
-				
-			</div>
-		
-		
+		<div class="postlist-image" style="background-image: url('/img/city.gif"></div>
 		
 		<div class="postlist-text">
 			<div class="postlist-title">New Blog Dropped</div>
 			<p>Announcing a new blog!</p>
 			<date>13 Nov 2022</date>
-		</article>
+		</div>
 	</article>
 </a>
-	
 
+<hr>
 
 	</main>
 	<footer>
 		<div>
 		<p>description about me and my blog</p>
-		<p>
-			<a href="/contact/">📧</a>
+		<div>
+			<a class="footer-link" href="/contact/">📧</a>
 			<span class="nav-sep">/</span>
-			<a href="https://twitter.com/heygleeson" target="_blank">🐦</a>
+			<a class="footer-link" href="https://twitter.com/heygleeson" target="_blank">🐦</a>
 			<span class="nav-sep">/</span>
-			<a href="https://github.com/heygleeson" target="_blank">🐙</a>
+			<a class="footer-link"href="https://github.com/heygleeson" target="_blank">🐙</a>
 			<span class="nav-sep">/</span>
-			<a href="https://firepit.zone" target="_blank">🌐</a>
-		</p>
+			<a class="footer-link"href="https://firepit.zone" target="_blank">🌐</a>
+		</div>
 		</div>
 		<img src="/img/authors/gleeson.jpg"></img>
 	</footer>

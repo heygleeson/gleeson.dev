@@ -6,6 +6,7 @@
 	<title>Featured Post! | gleeson.dev</title>
 	<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 	<!-- SEO/SOCIAL -->
+
 	<!-- SCRIPTS -->
 	
 		<link rel="stylesheet" href="/css/style.css">
@@ -17,13 +18,27 @@
 </head>
 <body>
 	<header>
+		
+			<div class="header-row">
 
-		<a href="/">
-			<div class="header-title row">
-			<img src="/img/authors/gleeson.jpg"></img>
-			<span>gleeson.dev</span>
+				<a href="/" style="display:flex; flex-flow: row; align-items:center; gap:.5em;">
+				<img src="/img/authors/gleeson.jpg"></img>
+				<div class="header-title">
+					<span>gleeson.dev</span>
+					<span class="tagline">it&#39;s a me, andy!</span>
+				</div>
+				</a>
+
+				<a href="/now/" style="align-content: end; flex-grow:1">
+				<div class="header-info column">
+					
+					<span class="headerInfo _title"><date class="headerInfo _date">(16 Nov 2022)</date> NOW</span>
+					<span class="headerInfo _text">Wow! This is what I&#39;m up to!</span>
+				</div>
+				</a>
+
 			</div>
-		</a>
+		
 		<nav>
 			
 				<div class="nav-item">
@@ -38,16 +53,20 @@
 					<a href="/contact/">CONTACT</a>
 				</div>
 			
+				<div class="nav-item">
+					<a href="/now/">NOW</a>
+				</div>
+			
 		</nav>
 	</header>
 	<main class="fade-in">
 		<div id="crumbs">
-
-/ <a href="/blog">BLOG</a> /
+<a href="/">•</a> / <a href="/blog">BLOG</a> / Featured Post!
 </div>
 
 <h1>Featured Post!</h1>
 <div class="intro">Very exciting!</div>
+
 <hr>
 <div class="postmeta">
 	<div class="row">
@@ -63,10 +82,11 @@
 	</div>
 </div>
 
+
 <hr>
 
 	<div class="heroFrame">
-	<img src="/img/station.png"> </img>
+	<img src="/img/station.png"></img>
 	</div>
 	<hr>
 
@@ -84,11 +104,17 @@
 <figure><img src="/img/hyperecho/PROMO_SCREENSHOT1.png" alt="blank" loading="lazy" decoding="async"><figcaption>blank</figcaption></figure>
 <pre class="language-gml"><code class="language-gml"><span class="token keyword">if</span> <span class="token punctuation">(</span>banana<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	isBanana <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span><br>	goMonkeyMode <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
 <h1 id="Header-1" tabindex="-1">Header 1 <a class="direct-link" href="#Header-1" aria-hidden="true">#</a></h1>
+<p>Text goes here.</p>
 <h2 id="Header-2" tabindex="-1">Header 2 <a class="direct-link" href="#Header-2" aria-hidden="true">#</a></h2>
+<p>Text goes here.</p>
 <h3 id="Header-3" tabindex="-1">Header 3 <a class="direct-link" href="#Header-3" aria-hidden="true">#</a></h3>
+<p>Text goes here.</p>
 <h4 id="Header-4" tabindex="-1">Header 4 <a class="direct-link" href="#Header-4" aria-hidden="true">#</a></h4>
+<p>Text goes here.</p>
 <h5 id="Header-5" tabindex="-1">Header 5 <a class="direct-link" href="#Header-5" aria-hidden="true">#</a></h5>
+<p>Text goes here.</p>
 <h6 id="Header-6" tabindex="-1">Header 6 <a class="direct-link" href="#Header-6" aria-hidden="true">#</a></h6>
+<p>Text goes here.</p>
 <p><strong>STRONG TEXT</strong></p>
 <p><em>emphasis text</em></p>
 <ul>
@@ -111,24 +137,24 @@
 <p>Here is a link to go to the <a href="blog/hyperecho-editor">hyperecho</a>.</p>
 
 </article>
+
 <hr>
-<div class="taglist">
-	<strong>Tags</strong>
+<div class="readnext">
 	
 </div>
 	</main>
 	<footer>
 		<div>
 		<p>description about me and my blog</p>
-		<p>
-			<a href="/contact/">📧</a>
+		<div>
+			<a class="footer-link" href="/contact/">📧</a>
 			<span class="nav-sep">/</span>
-			<a href="https://twitter.com/heygleeson" target="_blank">🐦</a>
+			<a class="footer-link" href="https://twitter.com/heygleeson" target="_blank">🐦</a>
 			<span class="nav-sep">/</span>
-			<a href="https://github.com/heygleeson" target="_blank">🐙</a>
+			<a class="footer-link"href="https://github.com/heygleeson" target="_blank">🐙</a>
 			<span class="nav-sep">/</span>
-			<a href="https://firepit.zone" target="_blank">🌐</a>
-		</p>
+			<a class="footer-link"href="https://firepit.zone" target="_blank">🌐</a>
+		</div>
 		</div>
 		<img src="/img/authors/gleeson.jpg"></img>
 	</footer>
