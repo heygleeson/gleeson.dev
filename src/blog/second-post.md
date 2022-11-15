@@ -2,9 +2,9 @@
 title: Featured Post!
 description: Very exciting!
 author: gleeson
-date: 2022-06-07
+date: 2022-11-14
 heroImage: station.png
-tags: ['firepit','zone']
+tags: []
 featured: true
 ---
 

@@ -2,7 +2,7 @@
 title: New Blog Dropped
 description: Announcing a new blog!
 author: gleeson
-date: 2022-06-07
+date: 2022-11-13
 heroImage: city.gif
 tags: []
 featured: true
