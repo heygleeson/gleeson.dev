@@ -32,11 +32,28 @@ if (banana) {
 ```
 
 # Header 1
+
+Text goes here.
+
 ## Header 2
+
+Text goes here.
+
 ### Header 3
+
+Text goes here.
+
 #### Header 4
+
+Text goes here.
+
 ##### Header 5
+
+Text goes here.
+
 ###### Header 6
+
+Text goes here.
 
 **STRONG TEXT**
 

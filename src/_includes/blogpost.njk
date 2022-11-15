@@ -2,12 +2,12 @@
 layout: base.njk
 ---
 <div id="crumbs">
-{# <a href="/">HOME</a> / <a href="/blog">BLOG</a> / <a href="{{ page.url }}">{{ title }}</a> / #}
-/ <a href="/blog">BLOG</a> /
+<a href="/">•</a> / <a href="/blog">BLOG</a> / {{ title }}
 </div>
 
 <h1>{{ title }}</h1>
 <div class="intro">{{ description }}</div>
+{% if author %}
 <hr>
 <div class="postmeta">
 	<div class="row">
@@ -24,17 +24,19 @@ layout: base.njk
 		{% endif %}
 	</div>
 </div>
+{% endif %}
 
 <hr>
 {% if heroImage %}
 	<div class="heroFrame">
-	<img src="/img/{{ heroImage }}"> </img>
+	<img src="/img/{{ heroImage }}"></img>
 	</div>
 	<hr>
 {% endif %}
 <article>
 	{{ content | safe }}
 </article>
+{% if tags|length > 1 %}
 <hr>
 <div class="taglist">
 	<strong>Tags</strong>
@@ -42,4 +44,9 @@ layout: base.njk
 		{% set tagUrl %}../../tags/{{ tag | slugify }}/{% endset %}
 		<span class="tag"><a href="{{ tagUrl | url }}">{{ tag }}</a></span>
 	{% endfor %}
+</div>
+{% endif %}
+<hr>
+<div class="readnext">
+	
 </div>

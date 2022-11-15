@@ -6,6 +6,7 @@
 	<title>{{ title }} | {{site.title}}</title>
 	<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 	<!-- SEO/SOCIAL -->
+
 	<!-- SCRIPTS -->
 	{% block styles %}
 		<link rel="stylesheet" href="{{ '/css/style.css' | url }}">
@@ -17,13 +18,27 @@
 </head>
 <body>
 	<header>
+		
+			<div class="header-row">
 
-		<a href="{{ '/' | url }}">
-			<div class="header-title row">
-			<img src="/img/authors/gleeson.jpg"></img>
-			<span>{{ site.title }}</span>
+				<a href="{{ '/' | url }}" style="display:flex; flex-flow: row; align-items:center; gap:.5em;">
+				<img src="/img/authors/gleeson.jpg"></img>
+				<div class="header-title">
+					<span>{{ site.title }}</span>
+					<span class="tagline">{{ site.tagline }}</span>
+				</div>
+				</a>
+
+				<a href="/now/" style="align-content: end; flex-grow:1">
+				<div class="header-info column">
+					{% set now = collections.now | last %}
+					<span class="headerInfo _title"><date class="headerInfo _date">({{ now.data.date | readableDate }})</date> NOW</span>
+					<span class="headerInfo _text">{{ now.data.text }}</span>
+				</div>
+				</a>
+
 			</div>
-		</a>
+		
 		<nav>
 			{% for entry in collections.all | eleventyNavigation %}
 				<div class="nav-item">
@@ -38,15 +53,15 @@
 	<footer>
 		<div>
 		<p>{{site.description}}</p>
-		<p>
-			<a href="/contact/">📧</a>
+		<div>
+			<a class="footer-link" href="/contact/">📧</a>
 			<span class="nav-sep">/</span>
-			<a href="https://twitter.com/heygleeson" target="_blank">🐦</a>
+			<a class="footer-link" href="https://twitter.com/heygleeson" target="_blank">🐦</a>
 			<span class="nav-sep">/</span>
-			<a href="https://github.com/heygleeson" target="_blank">🐙</a>
+			<a class="footer-link"href="https://github.com/heygleeson" target="_blank">🐙</a>
 			<span class="nav-sep">/</span>
-			<a href="https://firepit.zone" target="_blank">🌐</a>
-		</p>
+			<a class="footer-link"href="https://firepit.zone" target="_blank">🌐</a>
+		</div>
 		</div>
 		<img src="/img/authors/gleeson.jpg"></img>
 	</footer>

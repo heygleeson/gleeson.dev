@@ -56,28 +56,28 @@ module.exports = (config) => {
 	// Collections
 
 	// Events dated after build time.
-	config.addCollection('newevents', (collection) => {
-		const currentDate = new Date();
-		return collection.getFilteredByTags('events').filter((item) => {
+	// config.addCollection('newevents', (collection) => {
+	// 	const currentDate = new Date();
+	// 	return collection.getFilteredByTags('events').filter((item) => {
 
-			let date = item.data.dateFinish;
-			if (date == undefined) date = item.data.date;
+	// 		let date = item.data.dateFinish;
+	// 		if (date == undefined) date = item.data.date;
 
-			return new Date(date) > currentDate;
-		});
-	});
+	// 		return new Date(date) > currentDate;
+	// 	});
+	// });
 
-	// Events dated before build time.
-	config.addCollection('oldevents', (collection) => {
-		const currentDate = new Date();
-		return collection.getFilteredByTags('events').filter((item) => {
+	// // Events dated before build time.
+	// config.addCollection('oldevents', (collection) => {
+	// 	const currentDate = new Date();
+	// 	return collection.getFilteredByTags('events').filter((item) => {
 
-			let date = item.data.dateFinish;
-			if (date == undefined) date = item.data.date;
+	// 		let date = item.data.dateFinish;
+	// 		if (date == undefined) date = item.data.date;
 
-			return new Date(date) < currentDate;
-		});
-	});
+	// 		return new Date(date) < currentDate;
+	// 	});
+	// });
 
 	// Featured Posts
 	config.addCollection('featured', (collection) => {
@@ -110,34 +110,43 @@ module.exports = (config) => {
 		return filterIgnoredTags([...tags]);
 	});
 
-	// All Event Tags
-	config.addCollection('allEventTags', (collection) => {
-		let tags = new Set();
-
-		collection.getFilteredByTags('events').forEach((item) => {
-			(item.data.tags || []).forEach((tag) => tags.add(tag));
-		});
-
-		// Filter out ignored tags
-		return filterIgnoredTags([...tags]);
+	// Now Posts
+	config.addCollection('now', (collection) => {
+		let now = collection.getFilteredByTags('now');
+		//let now = collection.getAll();
+		console.log("==NOW==");
+		now.forEach((x,i) => console.log("X",x, "I",i));
+		return now;
 	});
 
-	// All posts by each author
-	config.addCollection("authors", collection => {
-	    const blogs = collection.getFilteredByTags('blog');
-	    return blogs.reduce((coll, post) => {
-	      const author = post.data.author;
+	// // All Event Tags
+	// config.addCollection('allEventTags', (collection) => {
+	// 	let tags = new Set();
 
-	      //if (!author) {return coll;}
+	// 	collection.getFilteredByTags('events').forEach((item) => {
+	// 		(item.data.tags || []).forEach((tag) => tags.add(tag));
+	// 	});
 
-	      if (!coll.hasOwnProperty(author)) {
-	        coll[author] = [];
-	      }
+	// 	// Filter out ignored tags
+	// 	return filterIgnoredTags([...tags]);
+	// });
 
-	      coll[author].push(post.data);
-	      return coll;
-	    }, {});
-	});
+	// // All posts by each author
+	// config.addCollection("authors", collection => {
+	//     const blogs = collection.getFilteredByTags('blog');
+	//     return blogs.reduce((coll, post) => {
+	//       const author = post.data.author;
+
+	//       //if (!author) {return coll;}
+
+	//       if (!coll.hasOwnProperty(author)) {
+	//         coll[author] = [];
+	//       }
+
+	//       coll[author].push(post.data);
+	//       return coll;
+	//     }, {});
+	// });
 
 	// -------------------------------------------------------------------- //
 	// Passthroughs (folders that get copied directly to output)

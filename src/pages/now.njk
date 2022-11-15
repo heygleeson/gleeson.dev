@@ -1,0 +1,25 @@
+---
+title: Now
+layout: 'base.njk'
+permalink: /now/
+eleventyNavigation:
+  key: Now
+---
+<article>
+
+  <h1>NOW</h1>
+  {% set now = collections.now | last %}
+  <div class="row featured" style="gap:1em"><date class="now-date">{{ now.date | readableDate }}</date> <p class="now-post">{{ now.data.text }}</p></div>
+  <h3>PREVIOUSLY</h3>
+  {% set list = collections.now %}
+  {% for item in list | reverse %}
+    {% if item != list | last %}
+    <div class="row" style="gap:1em">
+      <date class="now-date">{{item.date | readableDate }}</date> <p class="now-post">{{ item.data.text }}</p>
+    </div>
+    {% endif %}
+  {% endfor %}
+  <hr>
+  <h2>What is this page?</h2>
+  <p>It's nice is what it is.</p>
+</article>
