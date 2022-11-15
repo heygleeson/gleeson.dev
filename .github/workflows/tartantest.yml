@@ -1,18 +1,26 @@
 name: Eleventy Build TartanLlama
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  build_deploy:
+  tartan_deploy:
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
+
     steps:
-      - uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@main
+
       - name: Build via TartanLlama
         uses: TartanLlama/actions-eleventy@master
         with:
           install_dependencies: true
+          
       - name: Deploy to GH-Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
