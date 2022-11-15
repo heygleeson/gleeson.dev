@@ -16,12 +16,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
-      - name: Build via TartanLlama
+      - name: Build via 'TartanLlama/actions-eleventy'
         uses: TartanLlama/actions-eleventy@master
         with:
           install_dependencies: true
-          
-      - name: Deploy to GH-Pages
+
+      - name: Deploy via 'actions-gh-pages'
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./_site 
