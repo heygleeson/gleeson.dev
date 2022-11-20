@@ -15,6 +15,8 @@
 	{% endblock %}
 	{% block scripts %}
 	{% endblock %}
+
+	<script src="/js/weather.js"></script>
 </head>
 <body>
 	<header>
@@ -37,6 +39,11 @@
 				</div>
 				</a>
 
+				<div class="header-info column">
+					<img id="weatherIcon" src=""></img>
+					<span class="headerInfo _title" id="weatherTemp">0*C</span>
+					<span class="headerInfo _title" id="weatherDesc">...</span>
+				</div>
 			</div>
 		
 		<nav>
