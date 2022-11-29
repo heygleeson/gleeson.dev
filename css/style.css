@@ -36,6 +36,7 @@ html {min-height: 100vh;}
 
 ::selection {
 	background-color: var(--colAccent);
+	alpha: 0.2;
 	color: black;
 }
 
@@ -182,10 +183,10 @@ article h6 {font-size:1.0em; color: var(--colFGFade);}
 	}
 
 	main img {
-		object-fit: cover;
+/*		object-fit: cover;
 		max-width: 100%;
 		flex-grow: 1;
-		text-align: center;
+		text-align: center;*/
 	}
 
 	main p {
@@ -232,7 +233,7 @@ article h6 {font-size:1.0em; color: var(--colFGFade);}
 	.heroFrame {
 		margin: 16px 0px;
 		border-radius: 4px;
-		aspect-ratiO: 2 / 1;
+		aspect-ratiO: 16 / 9;
 		overflow: hidden;
 		display: flex;
 		justify-content: center;
@@ -281,8 +282,9 @@ article h6 {font-size:1.0em; color: var(--colFGFade);}
 	}
 
 	.footer-link {
-		font-size: 1.6em;
+		font-size: 1.2em;
 		padding: .2em;
+		color: var(--colFG);
 	}
 
 /* -------------------------------------------------------------- */
@@ -496,6 +498,8 @@ details > summary h2 {
 .center {text-align: center;}
 .column {display: flex; flex-flow: column; align-items: flex-end;}
 .row {display: flex; flex-flow: row; align-items: center;}
+.pixel {image-rendering: pixelated; position: relative;}
+.primary {color: var(--colFG);}
 /* -------------------------------------------------------------- */
 
 @media (max-width:600px) {
