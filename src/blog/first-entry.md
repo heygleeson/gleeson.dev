@@ -10,7 +10,7 @@ featured: true
 
 Hello there!
 
-## What is this?
+## <i class="fa-solid fa-triangle-exclamation primary"></i> What is this?
 
 This is a blog.
 

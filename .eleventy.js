@@ -177,7 +177,7 @@ module.exports = (config) => {
 	})
 	.use(markdownTasks)
 	.use(markdownFigures, {
-		figcaption: "alt",
+		figcaption: 'alt',
 		lazy: true,
 		async: true
 	});

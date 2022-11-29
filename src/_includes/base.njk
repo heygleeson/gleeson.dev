@@ -5,14 +5,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{ title }} | {{site.title}}</title>
 	<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+	<script src="https://kit.fontawesome.com/87224a5bfc.js" crossorigin="anonymous"></script>
+
 	<!-- SEO/SOCIAL -->
 
 	<!-- SCRIPTS -->
-	{% block styles %}
 		<link rel="stylesheet" href="{{ '/css/style.css' | url }}">
     	<link rel="stylesheet" href="{{ '/css/prism-base16-gruvbox.dark.css' | url }}">
     	<link rel="stylesheet" href="{{ '/css/prism-diff.css' | url }}">
+	{% block styles %}
+
 	{% endblock %}
+		<script src="/js/pixelart.js"></script>
 	{% block scripts %}
 	{% endblock %}
 </head>
@@ -54,13 +59,13 @@
 		<div>
 		<p>{{site.description}}</p>
 		<div>
-			<a class="footer-link" href="/contact/">📧</a>
+			<a class="footer-link" href="/contact/"><i class="fa-solid fa-envelope"></i></a>
 			<span class="nav-sep">/</span>
-			<a class="footer-link" href="https://twitter.com/heygleeson" target="_blank">🐦</a>
+			<a class="footer-link"href="https://github.com/heygleeson" target="_blank"><i class="fa-brands fa-github"></i></a>
 			<span class="nav-sep">/</span>
-			<a class="footer-link"href="https://github.com/heygleeson" target="_blank">🐙</a>
+			<a class="footer-link"href="https://firepit.zone" target="_blank"><i class="fa-solid fa-fire"></i></a>
 			<span class="nav-sep">/</span>
-			<a class="footer-link"href="https://firepit.zone" target="_blank">🌐</a>
+			<a class="footer-link"href="https://gleeson.itch.io" target="_blank"><i class="fa-brands fa-itch-io"></i></a>
 		</div>
 		</div>
 		<img src="/img/authors/gleeson.jpg"></img>
