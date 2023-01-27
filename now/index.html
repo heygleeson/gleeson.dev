@@ -7,6 +7,15 @@
 	<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
 	<script src="https://kit.fontawesome.com/87224a5bfc.js" crossorigin="anonymous"></script>
+	
+	
+	
+	
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter&family=JetBrains+Mono&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+
 
 	<!-- SEO/SOCIAL -->
 
@@ -22,25 +31,31 @@
 	
 </head>
 <body>
+	<div class="header-bg"></div>
+	<div class="header-bg stars2"></div>
+	<div class="header-bg stars3"></div>
 	<header>
-		
 			<div class="header-row">
 
-				<a href="/" style="display:flex; flex-flow: row; align-items:center; gap:.5em;">
-				<img src="/img/authors/gleeson.jpg"></img>
-				<div class="header-title">
-					<span>gleeson.dev</span>
-					<span class="tagline">it&#39;s a me, andy!</span>
+				<div>
+					<a href="/" style="display:flex; flex-flow: row; align-items:center; gap:.5em;">
+					<img src="/img/authors/gleeson-256px.png"></img>
+					<div class="header-title">
+						<span>gleeson.dev</span>
+						<span class="tagline">pixel art • games • web</span>
+					</div>
+					</a>
 				</div>
-				</a>
 
-				<a href="/now/" style="align-content: end; flex-grow:1">
-				<div class="header-info column">
-					
-					<span class="headerInfo _title"><date class="headerInfo _date">(16 Nov 2022)</date> NOW</span>
-					<span class="headerInfo _text">Wow! This is what I&#39;m up to!</span>
+				<div class="headerInfo">
+					<a href="/now/">
+					<div class="column">
+						
+						<span class="_title"><date class="headerInfo _date">2023.01.27</date></span>
+						<div class="_text">Still working on this site!</div>
+					</div>
+					</a>
 				</div>
-				</a>
 
 			</div>
 		
@@ -68,38 +83,75 @@
 		<article>
 
   <h1>NOW</h1>
+
   
-  <div class="row featured" style="gap:1em"><date class="now-date">16 Nov 2022</date> <p class="now-post">Wow! This is what I&#39;m up to!</p></div>
+  <div class="now-post now-featured">
+    <date class="now-date">2023.01.27</date>
+    
+        
+        <img class="now-img" src="/img/glombis.png"></img>
+        
+    
+    <div>Still working on this site!</div>
+  </div>
+
   <h3>PREVIOUSLY</h3>
+
   
   
     
   
     
-    <div class="row" style="gap:1em">
-      <date class="now-date">15 Nov 2022</date> <p class="now-post">Working on my website!!! This is going to be a really long bit of text to see how it gets handled.</p>
+    <div class="now-post" style="gap:1em">
+      <date class="now-date">2022.11.16</date>
+      
+
+        
+        <img class="now-img" src="/img/jungle-mockup.png"></img>
+        
+
+      
+      <div>Wow! This is what I&#39;m up to!</div>
     </div>
     
   
+    
+    <div class="now-post" style="gap:1em">
+      <date class="now-date">2022.11.15</date>
+      
+      <div>Working on my website!!! This is going to be a really long bit of text to see how it gets handled.</div>
+    </div>
+    
+  
+
   <hr>
+
   <h2>What is this page?</h2>
-  <p>It's nice is what it is.</p>
+
+  <p>This page is inspired by the concept of a <a href="https://nownownow.com/about">/now/</a> page — a page that tells you <b>what this person is focused on at this point in their life</b>. This is to differentiate from things like an <a href="../about">About</a> page or a <a href="../contact">Contact</a> page, which are much more commonplace and are typically static.</p>
+
+  <p>I have taken the basic idea and created a tiny micro-blog. For me, this page serves as a way to update this site without committing to longer blog posts.</p>
+
 </article>
 	</main>
 	<footer>
 		<div>
-		<p>description about me and my blog</p>
-		<div>
-			<a class="footer-link" href="/contact/"><i class="fa-solid fa-envelope"></i></a>
-			<span class="nav-sep">/</span>
-			<a class="footer-link"href="https://github.com/heygleeson" target="_blank"><i class="fa-brands fa-github"></i></a>
-			<span class="nav-sep">/</span>
-			<a class="footer-link"href="https://firepit.zone" target="_blank"><i class="fa-solid fa-fire"></i></a>
-			<span class="nav-sep">/</span>
-			<a class="footer-link"href="https://gleeson.itch.io" target="_blank"><i class="fa-brands fa-itch-io"></i></a>
+			<p>description about me and my blog</p>
+			<div>
+				<a class="footer-link" href="/contact/"><i class="fa-solid fa-envelope"></i></a>
+				<span class="nav-sep">/</span>
+				<a class="footer-link" href="https://github.com/heygleeson" target="_blank"><i class="fa-brands fa-github"></i></a>
+				<span class="nav-sep">/</span>
+				<a class="footer-link" href="https://firepit.zone" target="_blank"><i class="fa-solid fa-fire"></i></a>
+				<span class="nav-sep">/</span>
+				<a class="footer-link" href="https://gleeson.itch.io" target="_blank"><i class="fa-brands fa-itch-io"></i></a>
+				<span class="nav-sep">/</span>
+				<a class="footer-link" href="../feed" target="_blank"><i class="fa-solid fa-rss"></i></a>
+				<span class="nav-sep">/</span>
+			</div>
+			<p style='color:var(--colPrimaryFade)'>© Andrew Gleeson 2023</p>
 		</div>
-		</div>
-		<img src="/img/authors/gleeson.jpg"></img>
+		<img src="/img/authors/gleeson-256px.png"></img>
 	</footer>
 </body>
 </html>
