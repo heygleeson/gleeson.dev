@@ -1,0 +1,7 @@
+{
+	"tags": ["work"],
+	"layout": "blogpost.njk",
+	"eleventyNavigation": {
+		"parent": "Work"
+	}
+}

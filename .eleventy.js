@@ -30,10 +30,14 @@ module.exports = (config) => {
 		return DateTime.fromJSDate(dateObj).toFormat("dd LLL yyyy");
 	});
 
+	config.addFilter('displayDate', (dateObj) => {
+		return DateTime.fromJSDate(dateObj).toFormat("yyyy.MM.dd");
+	});
+
 	config.addFilter('uppercase', (value) => value.toUpperCase());
 
 	function filterIgnoredTags(tags) {
-		const ignoreTags = ['blog','events','firepit'];
+		const ignoreTags = ['blog'];
 		return (tags || []).filter((tag) => ignoreTags.indexOf(tag) === -1).sort();
 	}
 
@@ -43,41 +47,12 @@ module.exports = (config) => {
 	// Slugify
 	config.addFilter('slugify', slugify);
 
-	// By Author
-	config.addFilter('byAuthor', (posts, author) => {
-		return posts.filter(post => post.data.author === author);
-	})
-
 	// -------------------------------------------------------------------- //
 	// Shortcodes
 
 
 	// -------------------------------------------------------------------- //
 	// Collections
-
-	// Events dated after build time.
-	// config.addCollection('newevents', (collection) => {
-	// 	const currentDate = new Date();
-	// 	return collection.getFilteredByTags('events').filter((item) => {
-
-	// 		let date = item.data.dateFinish;
-	// 		if (date == undefined) date = item.data.date;
-
-	// 		return new Date(date) > currentDate;
-	// 	});
-	// });
-
-	// // Events dated before build time.
-	// config.addCollection('oldevents', (collection) => {
-	// 	const currentDate = new Date();
-	// 	return collection.getFilteredByTags('events').filter((item) => {
-
-	// 		let date = item.data.dateFinish;
-	// 		if (date == undefined) date = item.data.date;
-
-	// 		return new Date(date) < currentDate;
-	// 	});
-	// });
 
 	// Featured Posts
 	config.addCollection('featured', (collection) => {
@@ -113,40 +88,11 @@ module.exports = (config) => {
 	// Now Posts
 	config.addCollection('now', (collection) => {
 		let now = collection.getFilteredByTags('now');
-		//let now = collection.getAll();
-		console.log("==NOW==");
-		now.forEach((x,i) => console.log("X",x, "I",i));
+		// let now = collection.getAll();
+		//console.log("==NOW==");
+		//now.forEach((x,i) => console.log("\n\nX",x.template.frontMatter, "\n\nI",i));
 		return now;
 	});
-
-	// // All Event Tags
-	// config.addCollection('allEventTags', (collection) => {
-	// 	let tags = new Set();
-
-	// 	collection.getFilteredByTags('events').forEach((item) => {
-	// 		(item.data.tags || []).forEach((tag) => tags.add(tag));
-	// 	});
-
-	// 	// Filter out ignored tags
-	// 	return filterIgnoredTags([...tags]);
-	// });
-
-	// // All posts by each author
-	// config.addCollection("authors", collection => {
-	//     const blogs = collection.getFilteredByTags('blog');
-	//     return blogs.reduce((coll, post) => {
-	//       const author = post.data.author;
-
-	//       //if (!author) {return coll;}
-
-	//       if (!coll.hasOwnProperty(author)) {
-	//         coll[author] = [];
-	//       }
-
-	//       coll[author].push(post.data);
-	//       return coll;
-	//     }, {});
-	// });
 
 	// -------------------------------------------------------------------- //
 	// Passthroughs (folders that get copied directly to output)

@@ -1,5 +1,32 @@
-<div id="contact">
-	<details id="contactBlock">
+
+<div id="contactform">
+	<form action="https://formsubmit.co/237f011cd7084ada77abe6703a13c7af" method="POST" target="_blank">
+		<h1>Get in touch!</h1>
+	  <label>
+	    <input name="name" placeholder="name" required autofocus>
+	    <span><i class="fa-solid fa-user"></i></span>
+	  </label>
+	  <label>
+	    <input type="email" name="email" placeholder="email" required>
+	   	<span><i class="fa-solid fa-at"></i></span>
+	  </label>
+	  <label>
+	  	<input type="subject" name="_subject" placeholder="subject" required>
+	    <span><i class="fa-solid fa-quote-right"></i></span>
+	  </label>
+	  <label>
+	  	<textarea name="message" placeholder="your message" rows="4" required></textarea>
+	    <span><i class="fa-solid fa-message"></i></span>
+	  </label>
+
+	  <!-- Settings -->
+	  <input type="hidden" name="_template" value="table">
+
+	  <button type="submit">SEND</button>
+	</form>
+</div>
+
+{# 	<details id="contactBlock">
 	<summary>
 	<h2>send us an email</h2>	
 	</summary>
@@ -26,8 +53,8 @@
 		<button id="contactSubmit" type="button">SEND</button>
 		</div>
 	</form>
-	</details>
-</div>
+	</details> #}
+
 
 {# {% extends 'base.njk' %} #}
 

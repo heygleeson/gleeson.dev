@@ -11,16 +11,17 @@
 #}
 {# NORMAL SORT #}
 {% for post in list | reverse %}
-<a href="{{ post.url | url }}" class="block nopadding">
-	<article class="postlist-item {% if post.data.featured %} featured {% endif %}">
-		{% if post.data.heroImage %}
-		<div class="postlist-image" style="background-image: url('/img/{{ post.data.heroImage | url }}"></div>
-		{% endif %}
-		<div class="postlist-text">
-			<div class="postlist-title">{{ post.data.title }}</div>
-			<p>{{ post.data.description }}</p>
-			<date>{{ post.date | readableDate }}</date>
-		</div>
-	</article>
-</a>
+	<a href="{{ post.url | url }}" class="block nopadding">
+		<article class="postlist-item {% if post.data.featured %} featured {% endif %}">
+			{% if post.data.heroImage %}
+			<div class="postlist-image" style="background-image: url('/img/{{ post.data.heroImage | url }}"></div>
+			{% endif %}
+			<div class="postlist-text">
+				<div class="postlist-title">{{ post.data.title }}</div>
+				<p>{{ post.data.description }}</p>
+				<date>{{ post.date | readableDate }}</date>
+			</div>
+		</article>
+	</a>
+
 {% endfor %}
