@@ -1,0 +1,236 @@
+/* ------------------------------------------------------------------------- */
+/* Defaults */
+
+:root {
+	--dark: #060c0b;
+	--darkAccent: #1d1b1a;
+	--darkgrey: #4a3f39;
+	--grey: #69594e;
+	--lightgrey: #826e5e;
+	--lightAccent: #dfc8a7;
+	--light: #fff2da;
+
+	--red: #ef5043;
+	--orange: #ff9043;
+	--yellow: #ffcd48;
+	--guac: #cdbb3a;
+	--aqua: #80b985;
+	--pink: #db565c;
+	--lime: #4c733c;
+
+	--background: var(--light);
+	--backgroundAccent: var(--lightAccent);
+	--foreground: var(--dark);
+	--foregroundAccent: var(--darkgrey);
+	--markerCol: var(--orange);
+
+	--titleFont: Outfit;
+	--textFont: Switzer;
+
+	--markerCol: var(--grey);
+	--radius: 8px;
+}
+
+:root[data-theme='light'] {
+	--background: var(--light);
+	--backgroundAccent: var(--lightAccent);
+	--foreground: var(--dark);
+	--foregroundAccent: var(--darkgrey);
+	--markerCol: var(--orange);
+}
+
+* {
+	box-sizing: border-box;
+	image-rendering: pixelated;
+}
+
+::selection {
+	background-color: var(--aqua);
+	color: var(--dark);
+}
+
+body {
+	margin: 0px auto;
+	min-height: 100vh;
+	padding: 8px;
+	width: 100%;
+	max-width: 100%;
+	background-color: var(--darkAccent);
+	background-image: radial-gradient(var(--grey) 0.1px, transparent 1px);
+	background-size: 16px 16px;
+	background-attachment: fixed;
+	color: var(--light);
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	font-family: var(--textFont), sans-serif;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Header */
+#mainlogo {
+	padding: 1em;
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+	background: var(--dark);
+	border-radius: var(--radius)var(--radius) 0 0;
+}
+
+#emblem {
+	aspect-ratio: 1 / 1;
+	margin: 8px;
+	height: 64px;
+}
+
+#logotype {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+}
+
+#logotype #name {
+	color: var(--light);
+	font-size: 2rem;
+	letter-spacing: -1px;
+	line-height: 2.5rem;
+	margin: 0; padding: 0;
+}
+
+#logotype #subtitle {
+	margin: 0; padding: 0;
+	color: var(--orange);
+	line-height: 1rem;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Body / Content */
+
+#view {
+	flex-grow: 1;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	max-width: 100%;
+}
+
+#card {
+	display: flex;
+	flex-flow: column;
+	max-width: 50ch;
+	margin: 1em;
+	box-shadow: 8px 8px 1em var(--darkAccent);
+}
+
+main {
+	display: flex;
+	flex-flow: column;
+	flex-grow: 1;
+	background: var(--light);
+	border-radius: 0 0 var(--radius) var(--radius);
+}
+
+article {
+	padding: 1em;
+	flex-grow: 1;
+}
+
+nav {
+	background: var(--backgroundAccent);
+	padding: 1em;
+	display: flex;
+	flex-flow: row wrap;
+	gap: 0.5em;
+	border-radius: 0px 0px  var(--radius) var(--radius);
+}
+
+ol,ul {
+	padding-inline-start: 2em;
+}
+
+li {
+	color: var(--foregroundAccent);
+}
+
+li::marker {
+	color: var(--grey);
+}
+
+p {
+	color: var(--foreground);
+	line-height: 1.6rem;
+	text-align: justify;
+}
+
+.container {
+	position: relative;
+	justify-content: center;
+	overflow: clip;
+	width: 100%;
+	aspect-ratio: 2 / 1;
+}
+
+.linkout {
+	font-size: 1.1rem;
+	display: flex;
+	justify-content: center;
+	background: var(--lime);
+	padding: 0.5em 1em;
+	border-radius: 2em;
+	color: var(--light);
+	box-shadow: 2px 4px var(--grey);
+	border: 2px solid var(--light);
+	font-family: var(--titleFont);
+}
+
+h1 {
+	color: var(--foregroundAccent);
+	font-family: var(--titleFont);
+	margin: 0;
+	padding: .5rem 0;
+	border-bottom: 2px solid var(--backgroundAccent);
+}
+
+a {
+	color: var(--red);
+	text-decoration: none;
+	border-bottom: 2px solid var(--red);
+}
+
+.linkout:hover {
+	background: var(--guac);
+	color: var(--dark);
+}
+
+footer {
+	align-self: flex-end;
+	font-size: 1.1rem;
+	color: var(--grey);
+}
+
+.pixel {
+	position: absolute;
+}
+
+@media (max-width: 600px) {
+	#logotype #name {
+		line-height: 32px;
+		font-size: 28px;
+	}
+	#logotype #subtitle {
+		font-size: 14px;
+	}
+
+	h1 {
+		font-size: 20px;
+	}
+
+	p {
+		font-size: 12px;
+		line-height: 20px;
+	}
+	.container {
+		aspect-ratio: 3 / 1;
+	}
+
+}

@@ -3,91 +3,60 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{{ title }} | {{site.title}}</title>
-	<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
 
+	<title>{{ title }} / {{ site.name }}</title>
+
+	<!-- Meta -->
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="{{ '/css/style.css' | url }}">
+	
+	<!-- FontAwesome -->
 	<script src="https://kit.fontawesome.com/87224a5bfc.js" crossorigin="anonymous"></script>
-	
-	{# FontShare #}
-	{# <link href="https://api.fontshare.com/v2/css?f[]=switzer@300&f[]=outfit@600&display=swap" rel="stylesheet"> #}
-	
-	{# Google Fonts #}
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter&family=JetBrains+Mono&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
 
-
-	<!-- SEO/SOCIAL -->
-
-	<!-- SCRIPTS -->
-		<link rel="stylesheet" href="{{ '/css/style.css' | url }}">
-    	<link rel="stylesheet" href="{{ '/css/prism-base16-gruvbox.dark.css' | url }}">
-    	<link rel="stylesheet" href="{{ '/css/prism-diff.css' | url }}">
-	{% block styles %}
-
-	{% endblock %}
-		<script src="/js/pixelart.js"></script>
+	<!-- Scripts -->
+	<script src="/js/script.js" defer></script>
 	{% block scripts %}
+
 	{% endblock %}
+	<style>
+	{% block style %}
+
+	{% endblock %}
+	</style>
 </head>
 <body>
-	<div class="header-bg"></div>
-	<div class="header-bg stars2"></div>
-	<div class="header-bg stars3"></div>
-	<header>
-			<div class="header-row">
-
-				<div>
-					<a href="{{ '/' | url }}" style="display:flex; flex-flow: row; align-items:center; gap:.5em;">
-					<img src="/img/authors/gleeson-256px.png"></img>
-					<div class="header-title">
-						<span>{{ site.title }}</span>
-						<span class="tagline">{{ site.tagline }}</span>
-					</div>
-					</a>
+	<div id="view">
+		<div id="card">
+			<div id="mainlogo">
+				<img id="emblem" src="/img/logo.png">
+				<div id="logotype">
+					<div id="name">{{site.title}}</div>
+					<div id="subtitle">{{ site.tagline }}</div>
 				</div>
-
-				<div class="headerInfo">
-					<a href="/now/">
-					<div class="column">
-						{% set now = collections.now | last %}
-						<span class="_title"><date class="headerInfo _date">{{ now.data.date | displayDate }}</date></span>
-						<div class="_text">{{ now.data.text}}</div>
-					</div>
-					</a>
-				</div>
-
 			</div>
-		
-		<nav>
-			{% for entry in collections.all | eleventyNavigation %}
-				<div class="nav-item">
-					<a href="{{ entry.url | url }}">{{ entry.title | uppercase }}</a>
+			<main>
+				<div class="container">
+				<img class="pixel" src="/img/header.png">
 				</div>
-			{% endfor %}
-		</nav>
-	</header>
-	<main class="fade-in">
-		{{ content | safe }}
-	</main>
-	<footer>
-		<div>
-			<p>{{site.description}}</p>
-			<div>
-				<a class="footer-link" href="/contact/"><i class="fa-solid fa-envelope"></i></a>
-				<span class="nav-sep">/</span>
-				<a class="footer-link" href="https://github.com/heygleeson" target="_blank"><i class="fa-brands fa-github"></i></a>
-				<span class="nav-sep">/</span>
-				<a class="footer-link" href="https://firepit.zone" target="_blank"><i class="fa-solid fa-fire"></i></a>
-				<span class="nav-sep">/</span>
-				<a class="footer-link" href="https://gleeson.itch.io" target="_blank"><i class="fa-brands fa-itch-io"></i></a>
-				<span class="nav-sep">/</span>
-				<a class="footer-link" href="../feed" target="_blank"><i class="fa-solid fa-rss"></i></a>
-				<span class="nav-sep">/</span>
-			</div>
-			<p style='color:var(--colPrimaryFade)'>{{site.copyright | safe}}</p>
+				<article>
+					<h1><i class="fa-solid fa-triangle-exclamation"></i> Under Construction</h1>
+					<p>Hi, I'm Andy! I make games and tools for games.<p>
+					<p>I've worked on games such as <a target="_blank" href="https://store.steampowered.com/app/297130/Titan_Souls/">Titan Souls</a>, <a target="_blank" href="https://gleeson.itch.io/witchway">WitchWay</a> and <a target="_blank" href="https://hyperecho.acmi.net.au/">HYPER//ECHO</a>. I am pretty familiar with using game engines like <strong>GameMaker</strong> and more recently <strong>Godot</strong>.</p>
+					<p><link rel="stylesheet" type="text/css" href=""> Still working on this site. Come back soon!</p>
+				</article>
+				<nav>
+				{% for name,link in site.links %}
+					<a class="linkout" rel="me" target="_blank" href="{{ link }}"><i class="fa-brands fa-{{ name }}"></i></a>
+				{% endfor %}
+				</nav>
+			</main>
 		</div>
-		<img src="/img/authors/gleeson-256px.png"></img>
+	</div>
+	<footer>
+		<span>&copy; andrew gleeson <span id="year">2023</span></span>
+		<script>document.getElementById("year").innerText = new Date().getFullYear();</script>
 	</footer>
 </body>
 </html>

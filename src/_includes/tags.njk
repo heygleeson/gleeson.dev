@@ -1,7 +1,0 @@
-<div class="taglist">
-	<strong>All Tags</strong>
-	{% for tag in taglist %}
-	{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-	<a href="{{ tagUrl | url }}"><span class="tag">{{ tag }}</span></a>
-	{% endfor %}
-</div>

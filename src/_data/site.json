@@ -1,6 +1,13 @@
 {
-	"title": "gleeson.dev",
-	"tagline": "pixel art • games • web",
-	"description": "description about me and my blog",
-	"copyright": "© Andrew Gleeson 2023"
+	"name": "gleeson.dev",
+	"title": "andrew gleeson",
+	"tagline": "pixel art + games + web",
+	"description": "",
+	"url": "https://gleeson.dev/",
+	"language": "en",
+	"links": {
+		"github": "https://github.com/heygleeson",
+		"mastodon": "https://mastodon.gamedev.place/@gleeson",
+		"itch-io": "https://gleeson.itch.io"
+	}
 }

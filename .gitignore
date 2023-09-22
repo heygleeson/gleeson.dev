@@ -1,5 +1,4 @@
-﻿keys
-node_modules
+﻿node_modules
+keys
 public
-_site
-NEW/build
+build
