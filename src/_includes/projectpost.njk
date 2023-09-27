@@ -1,0 +1,43 @@
+{% extends "base.njk" %}
+
+{% block content %}
+	<div id="crumbs">
+	<a href="/">•</a> / <a href="/{{ category }}">{{ category }}</a> / {{ title | slugify}}
+	</div>
+
+	<div id='mobile-toc'>
+		{{ content | toc | safe }}
+	</div>
+
+	{% if icon %}
+	<img class="project-icon" src="/img/projects/{{ icon}}">
+	{% endif %}
+
+	{% if image %}
+	<img class="project-image" src="/img/projects/{{ image }}">
+	{% endif %}
+
+	<h1>{{ title }}</h1>
+
+	{% if table %}
+	<table>
+		{% for key,value in table %}
+		<tr>
+			<td class="key">{{ key }}</td>
+			<td class="value">{{ value }}</td>
+		</tr>
+		{% endfor %}	
+	</table>
+	{% endif %}
+
+
+	{{ content | safe }}
+	
+	{% set taglist = tags %}
+	{% include "snippet/taglist.njk" %}
+
+	<hr>
+
+	<!-- Next Project -->
+	
+{% endblock %}

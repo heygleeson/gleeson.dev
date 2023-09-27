@@ -3,3 +3,39 @@ title: andy
 layout: base.njk
 permalink: /
 ---
+
+
+<h4>Latest Post </h4>
+{% set post = collections.blog | reverse | first %}
+<article class="blog">
+<h2>{{ post.data.title }}</h2>
+<date>{{ post.date | readableDate }}</date>
+<article>{{ post.data.page.excerpt | md | safe }}</article>
+<span class="continue"><a href={{ post.url }}>Continue reading...</a></span>
+</article>
+<hr>
+
+<button class="C2A">Do something cool</button>
+
+<hr>
+
+<h2>DAYDREAMER</h2>
+
+<img class="sketch" src="/img/draw01.png">
+
+<p>Our first archetype is the Daydreamer! The Daydreamer has ideas, lots and lots of ideas... and enthusiasm, too... but they aren't quite sure how to turn them into reality. Their ideas "live" in notebooks, text files, or other documents. They may revolve around a singular fantasy universe that has gradually accumulated more and more detail over the years.</p>
+
+<div class="pixel-container">
+<img class="pixel" src="/img/draw02.png">
+</div>
+
+<p>Since Daydreamers don't have a lot of practical development experience, their game designs tend to be either grandiose and meandering, or based around a lot of high concept ideas that are hard to systemize. If a Daydreamer decides that to limit themselves to a word processor, they may become a dreaded Idea Person, stalking the internet for unwitting artists and programmers to make their dreams come true.</p>
+
+<p>These projects very often fall apart at the seams because Idea People do not understand the practical aspects of game development and lack the discipline to rein in their ideas when necessary. Also, artists and programmers with the requisite experience to finish a big project have almost certainly learned to avoid Idea People over the years.</p>
+
+<hr>
+
+<p>Cool.</p>
+
+<h1>Header</h1>
+<p>According to a study, bottlenose dolphins may be self-medicating their skin ailments by rubbing themselves against coral reefs. Corals were found to contain bioactive metabolites with antibacterial, antioxidative and oestrogen-like hormonal properties, which could be helpful in skin treatments. Dolphins are prone to yeast, bacterial and viral pox infections exacerbated by global warming.</p>

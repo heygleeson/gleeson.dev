@@ -1,0 +1,11 @@
+---
+title: Tags
+layout: base.njk
+permalink: /tags/
+---
+<div id="crumbs">
+<a href="/">•</a> / Tags
+</div>
+<h1>All Tags</h1>
+{% set taglist = collections.alltags %}
+{% include "snippet/taglist.njk" %}

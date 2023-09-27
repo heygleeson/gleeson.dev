@@ -1,0 +1,30 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<div id="crumbs">
+<a href="/">•</a> / <a href="/{{ category }}">{{ category }}</a> / {{ title | slugify}}
+</div>
+
+<h1>{{ title }}</h1>
+<date>{{ date | readableDate }}</date>
+
+<div id='mobile-toc'>
+	{{ content | toc | safe }}
+</div>
+
+<article>
+{{ content | safe }}
+</article>
+
+<div id="tagrow">
+{% for tag in tags %}
+	<span class="tag">{{ tag }}</span>
+{% endfor %}
+</div>
+
+<hr>
+
+<!-- Next Project -->
+
+{% endblock %}
+

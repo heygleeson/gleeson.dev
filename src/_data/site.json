@@ -1,13 +1,9 @@
 {
-	"name": "gleeson.dev",
 	"title": "andrew gleeson",
-	"tagline": "pixel art + games + web",
-	"description": "",
+	"subtitle": "pixel art + games + web",
+	"description": "(description)",
+	"author": "Andrew Gleeson",
 	"url": "https://gleeson.dev/",
-	"language": "en",
-	"links": {
-		"github": "https://github.com/heygleeson",
-		"mastodon": "https://mastodon.gamedev.place/@gleeson",
-		"itch-io": "https://gleeson.itch.io"
-	}
+	"email": "heygleeson@gmail.com",
+	"language": "en"
 }

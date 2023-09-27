@@ -3,9 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-	<title>{{ title }} / {{ site.name }}</title>
+	<title>{{ title }} / {{ site.title }}</title>
 
 	<!-- Meta -->
 
@@ -17,6 +17,7 @@
 
 	<!-- Scripts -->
 	<script src="/js/script.js" defer></script>
+	<script src="/js/now.js" defer></script>
 	{% block scripts %}
 
 	{% endblock %}
@@ -27,36 +28,54 @@
 	</style>
 </head>
 <body>
-	<div id="view">
-		<div id="card">
-			<div id="mainlogo">
-				<img id="emblem" src="/img/logo.png">
-				<div id="logotype">
-					<div id="name">{{site.title}}</div>
-					<div id="subtitle">{{ site.tagline }}</div>
-				</div>
+	<script>
+		if (typeof(theme) === 'undefined') { let theme = null; }
+		theme = localStorage.getItem('theme') || 'system';
+		document.documentElement.dataset.theme = theme;
+	</script>
+
+	<header>
+		<div id="mainlogo">
+			<img id="emblem" src="/img/logo.png">
+			<div id="logotype">
+				<div id="name">{{site.title}}</div>
+				<div id="subtitle">{{ site.subtitle }}</div>
 			</div>
-			<main>
-				<div class="container">
-				<img class="pixel" src="/img/header.png">
-				</div>
-				<article>
-					<h1><i class="fa-solid fa-triangle-exclamation"></i> Under Construction</h1>
-					<p>Hi, I'm Andy! I make games and tools for games.<p>
-					<p>I've worked on games such as <a target="_blank" href="https://store.steampowered.com/app/297130/Titan_Souls/">Titan Souls</a>, <a target="_blank" href="https://gleeson.itch.io/witchway">WitchWay</a> and <a target="_blank" href="https://hyperecho.acmi.net.au/">HYPER//ECHO</a>. I am pretty familiar with using game engines like <strong>GameMaker</strong> and more recently <strong>Godot</strong>.</p>
-					<p><link rel="stylesheet" type="text/css" href=""> Still working on this site. Come back soon!</p>
-				</article>
-				<nav>
-				{% for name,link in site.links %}
-					<a class="linkout" rel="me" target="_blank" href="{{ link }}"><i class="fa-brands fa-{{ name }}"></i></a>
-				{% endfor %}
-				</nav>
-			</main>
 		</div>
+		<div id="news">
+			<div id="newsBubble">...</div>
+			<div id="newsDate">(N/A)</div>
+		</div>
+		<button id="lightToggle">
+			<i id="lighticon" class="fa-solid fa-sun"></i>
+		</button>
+
+	</header>
+
+	<nav>
+		{% for entry in collections.all | eleventyNavigation %}
+			<div id="{{ entry.title | slugify }}" class="nav-item">
+		{% endfor %}
+		
+		<div><a href="/">Home</a></div>
+		<div><a href="/projects/">Projects</a></div>
+		<div><a href="/blog/">Blog</a></div>
+	</nav>
+
+	<div id="view">
+		<main>
+			{% block content %}
+			{{ content | safe }}
+			{% endblock %}
+		</main>
 	</div>
+
 	<footer>
 		<span>&copy; andrew gleeson <span id="year">2023</span></span>
-		<script>document.getElementById("year").innerText = new Date().getFullYear();</script>
+		<script>
+			document.getElementById("year").innerText = new Date().getFullYear();
+		</script>
+		<span id="toTop">↑</span>
 	</footer>
 </body>
 </html>

@@ -1,0 +1,41 @@
+---
+title: projects
+layout: base.njk
+permalink: /projects/
+---
+
+<div id="crumbs">
+<a href="/">•</a> / {{ title | slugify}}
+</div>
+
+<img class="sketch" src="/img/projects-header.png">
+
+<h1>Projects</h1>
+
+<p>Below are the latest projects I have made or contributed to. You can also subscribe to the RSS/Atom feed <a href="/feed.xml">here</a>.</p>
+
+<div id="toggle-row">
+  <button id="toggle-game" class="project-toggle active">Game</button>
+  <button id="toggle-web" class="project-toggle">Web</button>
+  <button id="toggle-tool" class="project-toggle">Tool</button>
+  <button id="toggle-life" class="project-toggle">Life</button>
+</div>
+
+<div class="project-list">
+{% for post in collections.projects | reverse %}
+<article>
+  <a href="{{ post.url | url }}" class="project-item {% if "tool" in post.data.tags %}tag-tool {% endif %}{% if "game" in post.data.tags %}tag-game {% endif %}{% if "web" in post.data.tags %}tag-web {% endif %}{% if "life" in post.data.tags %}tag-life {% endif %}">
+      {{ post.data.title }}
+  </a>
+  {% if post.data.link %}
+  <a target="_blank" class="linkout" href="{{ post.data.link }}">
+    <i class="fa-solid fa-share"></i>
+  </a>
+  {% endif %}
+</article>
+{% endfor %}
+</div>
+
+<h2>Tags</h2>
+{% set taglist = collections.projecttags %}
+{% include "snippet/taglist.njk" %}

@@ -1,0 +1,22 @@
+---
+layout: base.njk
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - allBlogTags 
+    - allTags
+    - blog
+    - all
+eleventyComputed:
+  title: Tagged "{{ tag }}"
+permalink: /tags/{{ tag }}/
+---
+<div id="crumbs">
+<a href="/">•</a> / <a href="/tags">Tags</a> / {{ tag }}
+</div>
+
+<h1>{{ title }}</h1>
+{% set list = collections[tag] %}
+{% include 'snippet/postlist.njk' %}
